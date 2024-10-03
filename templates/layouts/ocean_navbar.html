@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #007BFF;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}" style="color: #FFFFFF;">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: #FFFFFF;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #FFFFFF;">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" style="background-color: #0056b3;">
+                        <li><a class="dropdown-item" href="#" style="color: #FFFFFF;">Action</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: #FFFFFF;">Another action</a></li>
+                        <li><hr class="dropdown-divider" />
+                        <li><a class="dropdown-item" href="#" style="color: #FFFFFF;">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true" style="color: #FFFFFF;">Disabled</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+                        <i class="bi bi-globe"></i> {% if LANGUAGE_CODE == 'tr' %}Dil{% else %}Language{% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #0056b3;">
+                        <li><a class="dropdown-item" href="{% url 'set_language' %}?lang=tr" style="color: #FFFFFF;">Türkçe</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set_language' %}?lang=en" style="color: #FFFFFF;">English</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+                        <i class="bi bi-palette"></i> {% if LANGUAGE_CODE == 'tr' %}Tema{% else %}Theme{% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #0056b3;">
+                        <li><a class="dropdown-item" href="{% url 'set_theme' %}?theme=default" style="color: #FFFFFF;">{% if LANGUAGE_CODE == 'tr' %}Varsayılan{% else %}Default{% endif %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set_theme' %}?theme=dark" style="color: #FFFFFF;">{% if LANGUAGE_CODE == 'tr' %}Koyu{% else %}Dark{% endif %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set_theme' %}?theme=ocean" style="color: #FFFFFF;">{% if LANGUAGE_CODE == 'tr' %}Okyanus{% else %}Ocean{% endif %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set_theme' %}?theme=forest" style="color: #FFFFFF;">{% if LANGUAGE_CODE == 'tr' %}Orman{% else %}Forest{% endif %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'set_theme' %}?theme=sunset" style="color: #FFFFFF;">{% if LANGUAGE_CODE == 'tr' %}Gün Batımı{% else %}Sunset{% endif %}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

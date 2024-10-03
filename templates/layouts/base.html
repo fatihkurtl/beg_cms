@@ -21,7 +21,17 @@
     {% endif %} -->
 <body class="{{ request.session.theme|default:'default' }}">
     
-    {% include 'layouts/navbar.html' %}
+    {% if request.session.theme == 'dark' %}
+        {% include 'layouts/dark_navbar.html' %}
+    {% elif request.session.theme == 'ocean' %}
+        {% include 'layouts/ocean_navbar.html' %}
+    {% elif request.session.theme == 'forest' %}
+        {% include 'layouts/forest_navbar.html' %}
+    {% elif request.session.theme == 'sunset' %}
+        {% include 'layouts/sunset_navbar.html' %}
+    {% else %}
+        {% include 'layouts/navbar.html' %}
+    {% endif %}
 
     {% block content %}
 
