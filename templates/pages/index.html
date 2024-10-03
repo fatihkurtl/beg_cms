@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">BEG CMS'e Hoş Geldiniz</h1>
+            <p class="lead text-center mb-5">
+                BEG CMS, web sitenizi kolayca yönetmenizi sağlayan güçlü ve kullanıcı dostu bir içerik yönetim sistemidir.
+                Hızlı, güvenli ve özelleştirilebilir yapısıyla projelerinizi hayata geçirin.
+            </p>
+        </div>
+    </div>
+    {% if request.session.django_language %}
+    <p>Current Language: {{ request.session.django_language }}</p>
+{% else %}
+    <p>Language not set</p>
+{% endif %}
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="mb-3">Özelliklerimiz</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Kolay içerik yönetimi</li>
+                <li class="list-group-item">Responsive tasarım</li>
+                <li class="list-group-item">SEO optimizasyonu</li>
+                <li class="list-group-item">Güvenlik odaklı yapı</li>
+                <li class="list-group-item">Çoklu dil desteği</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="mb-3">Bize Ulaşın</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Adınız</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-posta Adresiniz</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesajınız</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
