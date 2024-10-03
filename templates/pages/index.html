@@ -11,10 +11,16 @@
         </div>
     </div>
     {% if request.session.django_language %}
-    <p>Current Language: {{ request.session.django_language }}</p>
-{% else %}
-    <p>Language not set</p>
-{% endif %}
+        <p>Current Language: {{ request.session.django_language }}</p>
+    {% else %}
+        <p>Language not set</p>
+    {% endif %}
+    <hr />
+    {% if request.session.theme %}
+        <p>Current Theme: {{ request.session.theme }}</p>
+    {% else %}
+        <p>Theme not set</p>
+    {% endif %}
     <div class="row">
         <div class="col-lg-6">
             <h2 class="mb-3">Özelliklerimiz</h2>
