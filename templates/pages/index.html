@@ -34,19 +34,9 @@
         </div>
         <div class="col-lg-6">
             <h2 class="mb-3">Bize Ulaşın</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Adınız</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-posta Adresiniz</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mesajınız</label>
-                    <textarea class="form-control" id="message" rows="3" required></textarea>
-                </div>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">Gönder</button>
             </form>
         </div>
